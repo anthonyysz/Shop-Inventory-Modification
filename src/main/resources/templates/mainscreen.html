@@ -25,10 +25,13 @@
 <body>
 
 <div class="fullscreen" style="background-color: #F3F6F4; color: #1C2F40">
-    <h1 class="text-center">AMS Computers</h1>
+    <h1 class="text-right" style="margin-top: 1%; text-align: center; margin-left: 1%">
+        AMS Computers
+        <a th:href="@{/about}" class="btn btn-primary btn-md mb-3" style="float: right; margin-right: 1%">About</a>
+    </h1>
     <hr>
-    <h2 style="margin-left: .5%">Computer Parts</h2>
-    <form style="margin-left: .5%" th:action="@{/mainscreen}">
+    <h2 style="margin-left: 1%">Computer Parts</h2>
+    <form style="margin-left: 1%" th:action="@{/mainscreen}">
         Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
         &nbsp;
         <input type="submit" value="Search" />
@@ -36,9 +39,9 @@
         <input type="button" value="Clear" id="btnClearPart" onclick="clearSearch()" />
     </form>
     <br><br>
-    <a style="margin-left: .5%" th:href="@{/showFormAddInPart}" class="btn btn-primary btn-md mb-3">Add Inhouse Part</a>
+    <a style="margin-left: 1%" th:href="@{/showFormAddInPart}" class="btn btn-primary btn-md mb-3">Add Inhouse Part</a>
     <a th:href="@{/showFormAddOutPart}" class="btn btn-primary btn-md mb-3">Add Outsourced Part</a>
-    <table style="margin-left: .5%; width: 99%; color: #1C2F40" class="table table-bordered table-striped">
+    <table style="margin-left: 1%; width: 98%; color: #1C2F40" class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
             <th>Name</th>
@@ -59,8 +62,8 @@
         </tr>
         </tbody>
     </table>
-    <h2 style="margin-left: .5%">Computers</h2>
-    <form style="margin-left: .5%" th:action="@{/mainscreen}">
+    <h2 style="margin-left: 1%">Computers</h2>
+    <form style="margin-left: 1%" th:action="@{/mainscreen}">
         Filter: <input type="text" name="productkeyword" id="productkeyword" size="50" th:value="${productkeyword}" required />
         &nbsp;
         <input type="submit" value="Search" />
@@ -73,8 +76,8 @@
         }
     </script>
     <br><br>
-    <a style="margin-left: .5%" th:href="@{/showFormAddProduct}" class="btn btn-primary btn-md mb-3">Add Product</a>
-    <table style="margin-left: .5%; width: 99%; color: #1C2F40" class="table table-bordered table-striped">
+    <a style="margin-left: 1%" th:href="@{/showFormAddProduct}" class="btn btn-primary btn-md mb-3">Add Product</a>
+    <table style="margin-left: 1%; width: 98%; color: #1C2F40" class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
             <th>Name</th>
