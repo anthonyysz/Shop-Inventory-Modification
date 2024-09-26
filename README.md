@@ -13,3 +13,7 @@
   - Lines 39, 40, and 76: Made the buttons medium-sized instead of small
   - Line 30: Changed 'Parts' to 'Computer Parts'
   - Lines 62: Changed 'Products' to 'Computers'
+## Task D:
+- Created about.html with everything it contains
+- Added at line 28 of mainscreen.html an About button to direct the webpage to the about page
+- In MainScreenControllerr.java at line 55: added @GetMapping("/about) to have code that will direct the webpage to the about page
