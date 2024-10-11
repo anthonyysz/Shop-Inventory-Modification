@@ -17,3 +17,7 @@
 - Created about.html with everything it contains
 - Added at line 28 of mainscreen.html an About button to direct the webpage to the about page
 - In MainScreenControllerr.java at line 55: added @GetMapping("/about) to have code that will direct the webpage to the about page
+## Task E:
+- Changed name of Data Source URL in application.properties to something personalized
+- Starting at line 46 in BootStrapData.java: added products to inhousePartRepository and oursourcedPartRepository
+- Below where parts were added: added 6 products to productRepository
