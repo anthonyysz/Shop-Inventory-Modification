@@ -25,3 +25,10 @@
 - Added failure.html, failurePro.html, success.html, and successPro.html for success and failure pages when using the Buy now button
 - At line 67 of AddPartController.java and line 176 of AddProductController.java (the bottom of each of those pages), I added the functions for the buy now buttons
 - On mainscreen.html on the product and part tables, I added a Buy Now button to the left of the Update and Remove buttons. I wrote code to use the buyPart and buyProduct functions when those buttons are pressed
+## Task G:
+- In Part.java and Product.java: added the minimum and maximum inventory entities, and added a validators to make sure that parts or products added are within the maximum or minimum inventory requirements
+- Modified sample data to include maximum and minimum inventory for both parts and products
+- Added places in InhousePartForm, OutsourcedPartForm, and ProductForm for maximum and minimum inventory to be added, also added indicators to make it easier to tell which box was which when filling out form
+- Corrected title of success and failure pages
+- Added validators for maximum products and maximum parts to enforce inventory is between maximum and minimum values
+- Renamed the persistent storage file

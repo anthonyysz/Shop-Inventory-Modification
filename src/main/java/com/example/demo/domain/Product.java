@@ -1,6 +1,7 @@
 package com.example.demo.domain;
 
 import com.example.demo.validators.ValidEnufParts;
+import com.example.demo.validators.ValidMaxProducts;
 import com.example.demo.validators.ValidProductPrice;
 
 import javax.persistence.*;
@@ -27,7 +28,10 @@ public class Product implements Serializable {
     @Min(value = 0, message = "Price value must be positive")
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
+    @ValidMaxProducts()
     int inv;
+    int maxInv;
+    int minInv;
     @ManyToMany(cascade=CascadeType.ALL, mappedBy = "products")
     Set<Part> parts= new HashSet<>();
 
@@ -45,6 +49,15 @@ public class Product implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+    }
+
+    public Product(long id, String name, double price, int inv, int maxInv, int minInv) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.inv = inv;
+        this.maxInv = maxInv;
+        this.minInv = minInv;
     }
 
     public long getId() {
@@ -77,6 +90,18 @@ public class Product implements Serializable {
 
     public void setInv(int inv) {
         this.inv = inv;
+    }
+
+    public int getMaxInv() { return maxInv; }
+
+    public void setMaxInv(int maxInv) { this.maxInv = maxInv; }
+
+    public int getMinInv() { return minInv; }
+
+    public void setMinInv(int minInv) { this.minInv = minInv; }
+
+    public boolean checkInv(int inv) {
+        return this.getInv() >= this.getMinInv() || this.getInv() <= this.getMaxInv();
     }
 
     public Set<Part> getParts() {
