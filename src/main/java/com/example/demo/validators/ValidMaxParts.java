@@ -14,10 +14,10 @@ import java.lang.annotation.Target;
  *
  */
 @Constraint(validatedBy = {MaxPartsValidator.class})
-@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidMaxParts {
-    String message() default "Part inventory value cannot be more than 200";
+    String message() default "Part inventory value cannot be more than the maximum";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
 

@@ -183,7 +183,7 @@ public class AddProductController {
         int inv = product.getInv();
         //checking if inv value is zero
         if (inv == 0) {
-            //returning failure.html page
+            //returning failurePro.html page
             return "failurePro";
         }
         else {
@@ -191,7 +191,7 @@ public class AddProductController {
             int tempInv = inv - 1;
             product.setInv(tempInv);
             productService.save(product);
-            //returning success.html page
+            //returning successPro.html page
             return "successPro";
         }
     }

@@ -2,6 +2,7 @@ package com.example.demo.bootstrap;
 
 import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
+import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
 import com.example.demo.repositories.InhousePartRepository;
 import com.example.demo.repositories.OutsourcedPartRepository;
@@ -9,6 +10,9 @@ import com.example.demo.repositories.PartRepository;
 import com.example.demo.repositories.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -155,8 +159,6 @@ public class BootStrapData implements CommandLineRunner {
             AMSComputerHalf.setInv(20);
             AMSComputerHalf.setPrice(700);
             AMSComputerHalf.setId(21);
-            AMSComputerHalf.setMaxInv(20);
-            AMSComputerHalf.setMinInv(0);
             productRepository.save(AMSComputerHalf);
 
             Product AMSComputerTB = new Product();
@@ -164,8 +166,6 @@ public class BootStrapData implements CommandLineRunner {
             AMSComputerTB.setInv(20);
             AMSComputerTB.setPrice(750);
             AMSComputerTB.setId(22);
-            AMSComputerTB.setMaxInv(20);
-            AMSComputerTB.setMinInv(0);
             productRepository.save(AMSComputerTB);
 
             Product AMSComputerRyzenHalf = new Product();
@@ -173,8 +173,6 @@ public class BootStrapData implements CommandLineRunner {
             AMSComputerRyzenHalf.setInv(20);
             AMSComputerRyzenHalf.setPrice(800);
             AMSComputerRyzenHalf.setId(23);
-            AMSComputerRyzenHalf.setMaxInv(20);
-            AMSComputerRyzenHalf.setMinInv(0);
             productRepository.save(AMSComputerRyzenHalf);
 
             Product AMSComputerRyzenTB = new Product();
@@ -182,8 +180,6 @@ public class BootStrapData implements CommandLineRunner {
             AMSComputerRyzenTB.setInv(20);
             AMSComputerRyzenTB.setPrice(850);
             AMSComputerRyzenTB.setId(24);
-            AMSComputerRyzenTB.setMaxInv(20);
-            AMSComputerRyzenTB.setMinInv(0);
             productRepository.save(AMSComputerRyzenTB);
 
             Product AMSComputerRyzenRadeonHalf = new Product();
@@ -191,8 +187,6 @@ public class BootStrapData implements CommandLineRunner {
             AMSComputerRyzenRadeonHalf.setInv(20);
             AMSComputerRyzenRadeonHalf.setPrice(850);
             AMSComputerRyzenRadeonHalf.setId(24);
-            AMSComputerRyzenRadeonHalf.setMaxInv(20);
-            AMSComputerRyzenRadeonHalf.setMinInv(0);
             productRepository.save(AMSComputerRyzenRadeonHalf);
 
             Product AMSComputerRyzenRadeonTB = new Product();
@@ -200,8 +194,6 @@ public class BootStrapData implements CommandLineRunner {
             AMSComputerRyzenRadeonTB.setInv(20);
             AMSComputerRyzenRadeonTB.setPrice(850);
             AMSComputerRyzenRadeonTB.setId(24);
-            AMSComputerRyzenRadeonTB.setMaxInv(20);
-            AMSComputerRyzenRadeonTB.setMinInv(0);
             productRepository.save(AMSComputerRyzenRadeonTB);
         }
     }

@@ -64,27 +64,4 @@ public class AddPartController {
             return "negativeerror";
         }
     }
-
-    @GetMapping("/buyPart")
-    public String buyPart(@Valid @RequestParam("partID") int theId,  Model theModel){
-        //creating part object
-        PartService repo = context.getBean(PartServiceImpl.class);
-        Part part=repo.findById(theId);
-        //creating a variable to store the value of inventory
-        int inv = part.getInv();
-        //checking if inv value is zero
-        if (inv == 0) {
-            //returning failure.html page
-            return "failure";
-        }
-        else {
-            //decrement inventory
-            int tempInv = inv - 1;
-            part.setInv(tempInv);
-            repo.save(part);
-            //returning success.html page
-            return "success";
-        }
-    }
-
 }

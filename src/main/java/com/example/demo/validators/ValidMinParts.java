@@ -13,11 +13,11 @@ import java.lang.annotation.Target;
  *
  *
  */
-@Constraint(validatedBy = {MaxProductValidator.class})
-@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Constraint(validatedBy = {MinPartsValidator.class})
+@Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidMaxProducts {
-    String message() default "Product inventory value cannot be more than 20";
+public @interface ValidMinParts {
+    String message() default "Part inventory value cannot be less than the minimum";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
 

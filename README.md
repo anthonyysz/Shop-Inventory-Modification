@@ -32,3 +32,16 @@
 - Corrected title of success and failure pages
 - Added validators for maximum products and maximum parts to enforce inventory is between maximum and minimum values
 - Renamed the persistent storage file
+## Assorted Corrections:
+- Removed maximum product validator from Product.java
+- Removed buy now button from parts on mainscreen
+- Created minimum parts validator and added to Part.java
+- Properly modified the code to enforce the inventory is between the maximum and minimum values
+- Deleted Success and Failure html pages for the incorrect part buy now button
+- Removed maximum and minimum inventory fields from Product.java and product form
+## Task H:
+- Corrected MaxPartsValidator to be for class instead of field, ensured that MinPartsValidator was the same
+- Changed code in InhousePartForm and OutsourcedPartForm to print global error messages in the same spot right above the submit button
+- The code change above resulted in properly displayed error messages for both inventories that were above the maximum and below the minimum
+- Edited EnufPartsValidator to make sure that when adding more products, the remaining associated parts would be above their minimum
+- Changed some display messages to accurately reflect the error

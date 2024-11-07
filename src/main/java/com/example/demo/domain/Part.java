@@ -2,8 +2,10 @@ package com.example.demo.domain;
 
 import com.example.demo.validators.ValidDeletePart;
 import com.example.demo.validators.ValidMaxParts;
+import com.example.demo.validators.ValidMinParts;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -20,6 +22,8 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
+@ValidMaxParts
+@ValidMinParts
 public abstract class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,7 +32,6 @@ public abstract class Part implements Serializable {
     @Min(value = 0, message = "Price value must be positive")
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
-    @ValidMaxParts()
     int inv;
     int maxInv;
     int minInv;
