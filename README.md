@@ -45,3 +45,5 @@
 - The code change above resulted in properly displayed error messages for both inventories that were above the maximum and below the minimum
 - Edited EnufPartsValidator to make sure that when adding more products, the remaining associated parts would be above their minimum
 - Changed some display messages to accurately reflect the error
+## Task I:
+- Added 2 tests for each minimum inventory and maximum inventory since there were none beforehand
