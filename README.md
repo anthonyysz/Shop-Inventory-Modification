@@ -47,3 +47,5 @@
 - Changed some display messages to accurately reflect the error
 ## Task I:
 - Added 2 tests for each minimum inventory and maximum inventory since there were none beforehand
+## Task J Done:
+- Deleted unused DeletePartsValidator class to clean code
