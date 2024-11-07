@@ -23,13 +23,17 @@
     </style>
 </head>
 <body>
-
+<!--Setting our title and our page size-->
+<!--Using a fullscreen style so that the page will take up the whole screen and there won't be borders-->
 <div class="fullscreen" style="background-color: #F3F6F4; color: #1C2F40">
     <h1 class="text-right" style="margin-top: 1%; text-align: center; margin-left: 1%">
         AMS Computers
         <a th:href="@{/about}" class="btn btn-primary btn-md mb-3" style="float: right; margin-right: 1%; margin-top: .25%">About</a>
     </h1>
     <hr>
+    <!--I Consistently use margins here to make sure that the text and tables are not flush with the side of the screen,
+    nor too far away. I also try to keep the whole screen in use with my page. I use percentages because different screen
+    sizes could show up differently-->
     <h2 style="margin-left: 1%">Computer Parts</h2>
     <form style="margin-left: 1%" th:action="@{/mainscreen}">
         Filter: <input type="text" name="partkeyword" id="partkeyword" size="50" th:value="${partkeyword}" required />
@@ -41,6 +45,9 @@
     <br><br>
     <a style="margin-left: 1%" th:href="@{/showFormAddInPart}" class="btn btn-primary btn-md mb-3">Add Inhouse Part</a>
     <a th:href="@{/showFormAddOutPart}" class="btn btn-primary btn-md mb-3">Add Outsourced Part</a>
+    <!--Here, I had to make the table width 98% of the page so that the margins would be the same on either side. I
+    use this strategy multiple times on this page.
+    Much of the code for the tables was already written when I began editing this project-->
     <table style="margin-left: 1%; width: 98%; color: #1C2F40" class="table table-bordered table-striped">
         <thead class="thead-dark">
         <tr>
@@ -91,6 +98,7 @@
             <td th:text="${tempProduct.name}">1</td>
             <td th:text="${tempProduct.price}">1</td>
             <td th:text="${tempProduct.inv}">1</td>
+            <!--Writing in the buyProduct controller which I had written the code for in AddProductController-->
             <td><a th:href="@{/buyProduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3" >Buy Now</a>
                 <a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"

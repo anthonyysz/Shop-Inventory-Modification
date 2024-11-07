@@ -176,7 +176,7 @@ public class AddProductController {
 
     @GetMapping("/buyProduct")
     public String buyProduct(@Valid @RequestParam("productID") int theId,  Model theModel){
-        //creating part object
+        //getting our product object
         ProductService productService = context.getBean(ProductServiceImpl.class);
         Product product=productService.findById(theId);
         //creating a variable to store the value of inventory
@@ -186,10 +186,12 @@ public class AddProductController {
             //returning failurePro.html page
             return "failurePro";
         }
+        //if the inventory is not zero
         else {
             //decrement inventory
             int tempInv = inv - 1;
             product.setInv(tempInv);
+            //saving the new product inventory
             productService.save(product);
             //returning successPro.html page
             return "successPro";

@@ -22,11 +22,11 @@
     <p>Inventory <input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
         <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
 
+    <!--Below, we added the spots for the minimum and maximum inventory to be added-->
+    <!--Also, we made it so that maximum and minimum inventory errors would display at the bottom of the form, right about the submit button-->
     <p>Maximum Inventory <input type="text" th:field="*{maxInv}" placeholder="Maximum Inventory" class="form-control mb-4 col-4"/></p>
-    <p th:if="${#fields.hasErrors('global')}" th:errors="*{global}">Inventory Error</p>
-
     <p>Minimum Inventory <input type="text" th:field="*{minInv}" placeholder="Minimum Inventory" class="form-control mb-4 col-4"/></p>
-
+    <p th:if="${#fields.hasErrors('global')}" th:errors="*{global}">Inventory Error</p>
 <p><input type="submit" value="Submit" /></p>
 </form>
 <a href="http://localhost:8080/">Link

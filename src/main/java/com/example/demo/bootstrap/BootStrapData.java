@@ -42,14 +42,15 @@ public class BootStrapData implements CommandLineRunner {
         if(inhousePartRepository.count() == 0) {
 
             //Adding inhouse parts needed for computer
-            InhousePart cpuAMS = new InhousePart();
-            cpuAMS.setName("AMS CPU");
-            cpuAMS.setInv(100);
-            cpuAMS.setPrice(200);
-            cpuAMS.setId(1);
-            cpuAMS.setMaxInv(200);
-            cpuAMS.setMinInv(0);
-            inhousePartRepository.save(cpuAMS);
+            InhousePart cpuAMS = new InhousePart(); //creating the part
+            cpuAMS.setName("AMS CPU"); //setting the part's name
+            cpuAMS.setInv(100); //setting the part's inventory
+            cpuAMS.setPrice(200); //setting the part's price
+            cpuAMS.setId(1); //setting the part's ID
+            cpuAMS.setMaxInv(200); //setting the part's maximum inventory
+            cpuAMS.setMinInv(0); //setting the part's minimum inventory
+            inhousePartRepository.save(cpuAMS); //saving the part to the repository
+            //this is repeated for all parts
 
             InhousePart coolerAMS = new InhousePart();
             coolerAMS.setName("AMS CPU Cooler");
@@ -124,6 +125,7 @@ public class BootStrapData implements CommandLineRunner {
             inhousePartRepository.save(tbAMS);
         }
 
+        //repeated once again for outsourced parts
         if(outsourcedPartRepository.count() == 0) {
             OutsourcedPart notR7 = new OutsourcedPart();
             notR7.setName("NotAMD Ryzen 7");
@@ -153,6 +155,7 @@ public class BootStrapData implements CommandLineRunner {
             outsourcedPartRepository.save(notRad7);
         }
 
+        //repeated again for products, but without a maximum and minimum inventory
         if(productRepository.count() == 0) {
             Product AMSComputerHalf = new Product();
             AMSComputerHalf.setName("AMS Computer 500gb");

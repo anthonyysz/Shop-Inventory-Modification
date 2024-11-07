@@ -31,11 +31,6 @@ public class MainScreenControllerr {
     private List<Part> theParts;
     private List<Product> theProducts;
 
- /*   public MainScreenControllerr(PartRepository partRepository, ProductRepository productRepository) {
-        this.partRepository = partRepository;
-        this.productRepository = productRepository;
-    }*/
-
     public MainScreenControllerr(PartService partService,ProductService productService){
         this.partService=partService;
         this.productService=productService;
@@ -54,6 +49,7 @@ public class MainScreenControllerr {
     }
 
     @GetMapping("/about")
+    //mapping to our about screen
     public String about() {
         return "about";
     }

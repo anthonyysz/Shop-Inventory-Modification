@@ -13,6 +13,7 @@ import javax.validation.ConstraintValidatorContext;
  *
  *
  */
+//beginning this validator the same way as the MaxPartsValidator
 public class MinPartsValidator implements ConstraintValidator<ValidMinParts, Part> {
     @Autowired
     private ApplicationContext context;
@@ -23,9 +24,14 @@ public class MinPartsValidator implements ConstraintValidator<ValidMinParts, Par
     }
 
     @Override
+    //Everything here is exactly the same as the MaxPartsValidator as well, except for the return line
     public boolean isValid(Part part, ConstraintValidatorContext constraintValidatorContext) {
         if(context==null) return true;
         if(context!=null)myContext=context;
+        /*
+        The return line shows us checking to make sure that the inventory exceeds that part's minimum
+        An error will be thrown if the inventory is below the minimum
+         */
         return part.getInv() >= part.getMinInv();
     }
 }

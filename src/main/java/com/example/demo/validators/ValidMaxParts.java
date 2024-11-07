@@ -13,10 +13,12 @@ import java.lang.annotation.Target;
  *
  *
  */
+//When an error is thrown by MaxPartsValidator, this will react
 @Constraint(validatedBy = {MaxPartsValidator.class})
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidMaxParts {
+    //This below is the message that will be thrown as the error
     String message() default "Part inventory value cannot be more than the maximum";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};

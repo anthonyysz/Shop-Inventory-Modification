@@ -22,6 +22,7 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
+//adding our maximum and minimum inventory validators
 @ValidMaxParts
 @ValidMinParts
 public abstract class Part implements Serializable {
@@ -33,6 +34,7 @@ public abstract class Part implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
     int inv;
+    //adding our maximum and minimum inventory fields
     int maxInv;
     int minInv;
 
@@ -55,6 +57,7 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+        //I added to this constructor maximum and minimum inventory
         this.maxInv = maxInv;
         this.minInv = minInv;
 
@@ -92,6 +95,7 @@ public abstract class Part implements Serializable {
         this.inv = inv;
     }
 
+    //adding in mutators and accessors for maximum and minimum inventory
     public int getMaxInv() { return maxInv; }
 
     public void setMaxInv(int maxInv) { this.maxInv = maxInv; }
