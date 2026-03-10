@@ -1,4 +1,4 @@
-# Hotel Website Modification
+# Shop Inventory Modification
 ## 1. Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;This project challenged me to make a website that could keep track of inventory in an online store of some kind. I chose a computer parts website. The parts and prices are all hypothetical for the sake of the project. I began with a template website that could process parts and products, my job was to fix the html, add an about page, make is so the parts can be bought, and track minimum and maximum inventory counts.
 ## 2. My work
